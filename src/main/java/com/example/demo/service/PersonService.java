@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class PersonService {
-
     private final IPersonDao iPersonDao;
 
     public PersonService(IPersonDao iPersonDao) {
