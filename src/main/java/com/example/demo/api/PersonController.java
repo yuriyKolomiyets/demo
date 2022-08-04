@@ -2,12 +2,10 @@ package com.example.demo.api;
 
 import com.example.demo.model.Person;
 import com.example.demo.service.PersonService;
-import org.springframework.aop.target.LazyInitTargetSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.UUID;
 
 @RequestMapping ("api/v1/person")
@@ -32,5 +30,13 @@ public class PersonController {
     @GetMapping(path="{id}")
     public Person getPersonById(@PathVariable("id") UUID id) {
         return personService.getPersonById(id).orElse(null);
+    }
+
+    public int deletePersonById(UUID id){
+        return personService.deletePersonById(id);
+    }
+
+    public int updatePersonById(UUID id, Person person){
+        return personService.updatePersonById(id,person);
     }
 }

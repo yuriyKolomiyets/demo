@@ -30,4 +30,11 @@ public class PersonService {
     public Optional<Person> getPersonById(UUID id) {
         return iPersonDao.selectPersonById(id);
     }
+    public int deletePersonById(UUID id){
+        return iPersonDao.deletePersonById(id);
+    }
+
+    public int updatePersonById(UUID id, Person person){
+        return iPersonDao.updatePersonById(id,person);
+    }
 }
